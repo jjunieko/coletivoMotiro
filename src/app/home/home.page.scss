@@ -1,0 +1,67 @@
+ion-toolbar {
+  
+  --background:rgb(0, 0, 0) url("../../assets/img/FUNDO_BOLINHAS.png") no-repeat center center / cover !important;
+
+}
+
+ion-menu-button {
+  color: rgb(241, 192, 87);
+  width: 50px;
+  height: 50px;
+  --color: rgb(252, 252, 252);
+ 
+ }
+
+ion-content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  --background: rgb(0, 0, 0) url("../../assets/img/FUNDO_BOLINHAS.png") no-repeat center center / cover !important;
+}
+
+
+p {
+  margin-top: -5px;
+  color: #fff;
+  text-align: center;
+  justify-content: center;
+}
+
+.containerOne img {
+  height: 160px;
+  justify-content: center;
+  align-items: center; 
+  padding: 0px 10px;
+  margin: 20px;
+}
+
+.ion-text-center {
+  margin-top: 10px;
+  padding: 10px;
+}
+
+#container3 img {
+  padding: 7px;
+  align-items: center;
+}
+ion-button {
+  --background: rgb(236, 177, 48);
+  padding: 0 15px 5px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #000;
+  height: 50px;
+}
+
+.cvv,
+.motiro {
+  height: 80px;
+}
+.bombeiro,
+.contatoEmergencial,
+.policia {
+  margin: 5px;
+  height: 100px;
+}

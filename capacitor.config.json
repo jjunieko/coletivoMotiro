@@ -1,0 +1,18 @@
+{
+    "appId": "io.ionic.demo.pg.cap.ng",
+    "appName": "amigo",
+    "bundledWebRuntime": false,
+    "npmClient": "npm",
+    "webDir": "www",
+    "plugins": {
+      "PushNotifications": {
+        "presentationOptions": [
+          "badge",
+          "sound",
+          "alert"
+        ]
+      }
+    },
+    "capacitor": {},
+    "cordova": {}
+  }

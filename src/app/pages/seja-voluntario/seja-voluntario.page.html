@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <!--     <ion-title>{{ calName }}</ion-title> -->
+    <ion-title>Seja um Voluntário</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-icon name="close" slot="end" [routerLink]="['/home']" routerLinkActive="router-link-active"
+      class="ion-padding"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="false" class="ion-text-center">
+  <ion-slides paginationClickable=true initialSlide=0 loop=true autoplay=2000 speed=3000 #mySlider color="light">
+
+    <ion-slide *ngFor="let item of voluntario">
+
+      <img src="{{item.img}}">
+
+
+      <div class="swiper-button-next" (click)="slideNext()"></div>
+      <div class="swiper-button-prev" (click)="slidePrev()"></div>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="ion-text-justify">
+
+
+    <p>O voluntariado é uma oportunidade excepcional para a prática do bem e da solidariedade.</p>
+    <p>Ser voluntário é muito mais que oferecer uma parte de seu tempo, é muito mais que olhar para a necessidade do
+      outro, muito mais que fazer parte de uma maravilhosa corrente, muito mais que colocar o seu entendimento e
+      experiência em benefício do todo, vai além das expectativas do ser humano e o coloca em destaque, tanto para quem
+      doa, tanto para quem recebe</p>
+    <p>O voluntário é um guerreiro silencioso que não busca fama, dinheiro ou oportunidade de riquezas, apenas dá o que
+      tem de melhor. A visão do voluntário é ampla e bela, pois tem um alcance infinitamente maior sobre o que acontece
+      ao seu redor e se integra a estas condições sempre com muita entrega e determinação.</p>
+    <p>Una-se ao nosso exército, nos ajude a salvar vidas! Nesse exato momento existe alguém precisando conversar com
+      você. Seja um voluntário em nosso aplicativo.</p>
+    <p>Clique no ícone abaixo, faça o seu <strong>cadastro</strong> e receba todas as informações. Somente para maiores
+      de 18 anos!</p>
+
+    <h3><strong class="ion-align-items-center" style="color: lightgrey;">Cadastre-se</strong> </h3>
+  </div>
+
+  <iframe
+    src="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf_hdUAKqcda8piC6jtzJx0HTK6zLD9XIYxAECDxKRBDaIDHQ/formResponse"></iframe>
+
+
+</ion-content>

@@ -1,0 +1,91 @@
+.pix{
+    font-family:arial,helvetica,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 15px;
+}
+
+
+ion-icon{
+    color: rgb(241, 192, 87);
+    width: 30px;
+    height: 30px;
+}
+
+ion-menu-button{
+    color: rgb(241, 192, 87);
+}
+
+ion-toolbar {
+    --background: rgb(0, 0, 0) url("../../../assets/img/FUNDO_BOLINHAS.png") no-repeat center center / cover !important;
+  
+  }
+  
+  ion-content {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    --background: rgb(0, 0, 0) url("../../../assets/img/FUNDO_BOLINHAS.png") no-repeat center center / cover !important;
+  }
+
+
+
+/* teste */
+
+
+page-home {
+    #custom-overlay {
+         position: fixed;
+         top: 0;
+         right: 0;
+         bottom: 0;
+         left: 0;
+         z-index: 100000;
+         width:100%;
+         background-color: #002a3e;
+    }
+  
+    .flb {
+         background-color: #3ebffb;
+         height:100%;
+         width:100%;
+ 
+         animation: pulse 1slinearforwards;
+ 
+         display: flex;
+         align-items: center;
+         justify-content: center;
+     }
+ 
+     .Aligner-item {
+         max-width: 50%;
+     }
+ 
+     .Aligner-item--top {
+         align-self: flex-start;
+     }
+ 
+     .Aligner-item--bottom {
+         align-self: flex-end;
+     }
+ 
+     #custom-overlayimg {
+         display: block;
+         margin: 0auto;
+         width: 50%;
+         height: auto;
+         animation: animation3100mslinearinfiniteboth;
+         animation-delay: 1s;
+     }
+    }
+
+    
+@keyframes pulse {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+

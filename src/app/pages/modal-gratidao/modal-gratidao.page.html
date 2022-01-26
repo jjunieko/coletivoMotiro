@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ isEdit == true ? 'Atualizar Contato' : 'Salvar Contato ' }}</ion-title>
+<!--     <h3>{{ calName }}</h3> -->
+    <ion-buttons slot="end">
+      <ion-button (click)="fecharCard()">
+        <ion-icon name="close"></ion-icon>
+
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="submitForm()">
+    <ion-row>
+      <ion-col>
+        <ion-item color="#f0f0f9">
+          <ion-label>Nome: </ion-label>
+          <ion-input type="text" formControlName="name" required placeholder="Nome para contato"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item color="#f0f0f9">
+          <ion-label>Telefone: </ion-label>
+          <ion-input type="number" formControlName="contato" required placeholder="(xx) xxxxx-xxxx"  ></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="success" expand="block" [disabled]="!form.valid" >
+          {{isEdit === true ? 'Atualizar' : 'Salvar'}}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+ 
+
+</ion-content>
