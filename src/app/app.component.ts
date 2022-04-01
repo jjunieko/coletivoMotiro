@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from "@angular/core";
+import { Capacitor, Plugins } from '@capacitor/core';
 import { StatusBar } from "@awesome-cordova-plugins/status-bar/ngx";
 import { ModalController, Platform } from "@ionic/angular";
 import { SplashPage } from "./splash/splash.page";
@@ -30,25 +31,27 @@ export class AppComponent {
     
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
-      this.splashscreen.hide();
-      this.presentSplashScreen();
+      if (Capacitor.isPluginAvailable('SplashScreen')) {
+        Plugins.SplashScreen.hide();
+      }
+      /* this.presentSplashScreen(); */
 
       setTimeout(() => {
         this.routerHidden = false;
         // this.splash.nativeElement.style.display = 'none';
-        this.splash.nativeElement.style.display = "none";
+        // this.splash.nativeElement.style.display = "none";
       }, 3000);
     });
-    this.router.navigate(["/home"], { skipLocationChange: false });
+    // this.router.navigate(["/home"], { skipLocationChange: false });
 
     
   }
 
-  async presentSplashScreen() {
+  /* async presentSplashScreen() {
     const modal = await this.modalCtrl.create({
       component: SplashPage,
     });
     return await modal.present();
-  }
+  } */
   
 }

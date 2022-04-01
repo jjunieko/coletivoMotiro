@@ -33,12 +33,13 @@ export class ContatoEmergenciaPage implements OnInit {
     private router: Router,
     private storage: Storage,
     public laoding: LoadingController,
+    public laodingCltr: LoadingController,
   ) {}
 
   async ngOnInit(): Promise<void> {
     await this.storage.create();
     this.getCovidForm();
-    
+    this.presentLoading();    
   }
 
   async abrirModalCovid() {
@@ -49,6 +50,8 @@ export class ContatoEmergenciaPage implements OnInit {
       await this.getCovidForm();
     });
     return await modal.present();
+    this.presentLoading();
+
   }
 
   async editarDadosCovidVindoDaModal(id: number): Promise<void> {
@@ -61,10 +64,12 @@ export class ContatoEmergenciaPage implements OnInit {
     modal.onDidDismiss().then(async () => {
       await this.getCovidForm();
     });
+    this.presentLoading();
     return await modal.present();
   }
 
   async delete(key) {
+    this.presentLoading();
     await this.salvarService.delete(key);
     await this.getCovidForm();
   }
@@ -75,5 +80,16 @@ export class ContatoEmergenciaPage implements OnInit {
       this.salvarItens = await this.salvarService.getListarTodos();
 /*       console.log(this.salvarItens, "vamos chegar aqui salvar itens getCovidForm");
  */    }, 2000);
+  }
+
+  async presentLoading() {
+    const loading = await this.laodingCltr.create({
+      cssClass: 'my-custom-class',
+      message: ' Aguarde...',
+      duration: 2000,
+      
+    });
+    await loading.present();
+
   }
 }
